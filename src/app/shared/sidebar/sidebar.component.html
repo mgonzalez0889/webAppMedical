@@ -1,0 +1,38 @@
+<aside class="sidebar pos-absolute z-2"
+       data-role="sidebar"
+       data-toggle="#sidebar-toggle-3"
+       id="sb3"
+       data-shift=".shifted-content">
+
+  <div class="sidebar-header" data-image="/assets/img/logo.jpg">
+    <div class="avatar">
+      <img data-role="" data-email="sergey@pimenov.com.ua">
+    </div>
+    <!--
+    <span class="title fg-white">Metro 4 Components Library</span>
+    <span class="subtitle fg-white"> 2018 © Sergey Pimenov</span>-->
+  </div>
+
+  <ng-container *ngFor="let option of menu">
+    <ul class="sidebar-menu">
+      <ng-container *ngFor="let item of option.childrens">
+        <li><a [routerLink]="item.link"><span class="mif-files-empty icon"></span>{{ item.descripcion }}</a></li>
+      </ng-container>
+    </ul>
+  </ng-container>
+</aside>
+
+<div class="shifted-content h-100 p-ab">
+  <div class="app-bar pos-absolute bg-darkBlue z-1" data-role="appbar">
+    <button class="app-bar-item c-pointer" id="sidebar-toggle-3">
+      <span class="mif-menu fg-white"></span>
+    </button>
+    <h2 class="fg-white">Medical</h2>
+  </div>
+
+  <div class="h-100 p-4">
+    <p>
+      <app-contenido></app-contenido>
+    </p>
+  </div>
+</div>

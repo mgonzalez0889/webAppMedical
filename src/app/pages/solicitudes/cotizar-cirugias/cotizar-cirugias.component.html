@@ -1,0 +1,132 @@
+<div class="container p-12-md">
+  <h4>Cotiza tu cirugia</h4>
+  <div class="row">
+     <div class="cell-md-12 ">
+       <p class="fg-red mx-auto">
+         Gracias por confiar en nosotros, ahora podras cotizar tu cirugia medica desde cualquier dispositivo
+         con los mejores profesionales
+       </p>
+    </div>
+  </div>
+  <form>
+    <div class="row ">
+      <div class="cell-md-5">
+        <div class="form-group">
+          <label>Tipo de documento*</label>
+          <select data-role="select">
+            <option value="C.C">Cedula de ciudadania</option>
+            <option value="C.E">Cedula de extranjeria</option>
+            <option value="C.NV">Certificado de nacido vivo</option>
+            <option value="CDP">Carne diplomatico</option>
+            <option value="nuip">N.U.I.P</option>
+            <option value="pasaporte">Pasaporte</option>
+            <option value="S.E">Servicio especial</option>
+            <option value="RG">Registro civil</option>
+            <option value="SP">Salvo conducto de permanencia</option>
+            <option value="TI">Tarjeta de identidad</option>
+          </select>
+        </div>
+
+      </div>
+      <div class="cell-md-5">
+        <div class="form-group">
+          <label>Numero de documento*</label>
+          <input type="text" placeholder="Ingrese documento"/>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="cell-md-5">
+        <div class="form-group">
+        <label>Nombre del paciente</label>
+         <input type="text" placeholder="Nombre completo"/>
+
+        </div>
+
+      </div>
+      <div class="cell-md-5">
+        <div class="form-group">
+          <label>Numero de telefono</label>
+          <input type="text" placeholder="Numero de contacto"/>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="cell-md-5">
+        <label>Fecha tentativa</label>
+        <input type="text" data-role="calendarpicker">
+
+      </div>
+
+      <div class="cell-md-5">
+        <label>Tipo de cirugia</label>
+        <select data-role="select">
+          <option *ngFor="let cirugia of listadoCirugia" value="{{ cirugia.id }} " >
+            {{ cirugia.nombre }}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="cell-md-5">
+        <div class="form-group">
+          <label>Procedimiento a realizar</label>
+          <input type="text" placeholder="Procedimiento"/>
+        </div>
+      </div>
+
+      <div class="cell-md-5">
+        <div class="form-group">
+          <label>Tipo de habitacion</label><br>
+            <select data-role="select">
+              <option value="sencilla" >
+                Sencilla
+              </option>
+              <option value="suite" >
+                Suite
+              </option>
+            </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="cell-md-5">
+        <div class="form-group">
+          <label>Correo Electronico</label>
+          <input type="email" placeholder="Email"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="cell-md-10">
+        <div class="form-group">
+          <p class="fg-red">
+            ¿Autoriza a Medical el uso de sus datos personales para fines comerciales
+            de acuerdo a lo contemplado en la Ley 1581 de 2012? *
+          </p>
+          <input type="radio" data-role="radio" data-caption="si">
+        </div>
+      </div>
+    </div>
+
+  </form>
+  <div class="row p-2">
+    <div class="cell-md-8">
+      <div class="button-group">
+        <button class="button primary outline m-2" (click)="cotizar()">
+          Aceptar
+        </button>
+        <button class="button alert outline">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
